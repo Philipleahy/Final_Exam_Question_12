@@ -11,8 +11,12 @@ int main() {
 
     	while (1){
             float x = MMA.x();
+            float y = MMA.y();
+            float z = MMA.z();
 
             Red.write(abs(x));
+            Green.write(abs(y));
+            Blue.write(abs(z));
 
   }
 }
