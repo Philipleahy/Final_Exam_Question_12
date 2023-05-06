@@ -1,12 +1,18 @@
 #include "mbed.h"
+#include "MMA7660.h"
 
-DigitalOut myled(LED1);
+MMA7660 MMA(p28, p27);
 
-int main() {
-  while(1) {
-    myled = 1;
-    wait(0.2);
-    myled = 0;
-    wait(0.2);
+PwmOut Red(p23);//PWM out for RGB Red 
+PwmOut Green(p24);//PWM out for RGB Green
+PwmOut Blue(p25);//PWM out for RGB Blue 
+
+int main() { 
+
+    	while (1){
+            float x = MMA.x();
+
+            Red.write(abs(x));
+
   }
 }
